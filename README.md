@@ -1,4 +1,4 @@
-# Dairyman
+# Oson Farm
 
 A Node.js + Express + EJS web app for managing dairy farm operations: farmer accounts, animals, milk production, expenses, and health records. Uses MySQL for persistence and Chart.js for simple dashboard charts.
 
@@ -49,7 +49,7 @@ A Node.js + Express + EJS web app for managing dairy farm operations: farmer acc
 MySQL connection defaults (see `server.js`):
 
 - host: `localhost`
-- database: `dairyman`
+- database: `oson_farm`
 - user: `root`
 - password: `password`
 - port: `3307`
@@ -63,7 +63,7 @@ Adjust these in `server.js` to match your local MySQL setup.
    ```bash
    mysql -u <USER> -p -h localhost -P <PORT> < db.sql
    ```
-   Replace `<USER>` and `<PORT>` with your credentials (e.g., `root` and `3306` or `3307`). The script creates the `dairyman` database, tables, and inserts sample data.
+   Replace `<USER>` and `<PORT>` with your credentials (e.g., `root` and `3306` or `3307`). The script creates the `oson_farm` database, tables, and inserts sample data.
 
 ## Running the App
 
@@ -126,7 +126,7 @@ Adjust these in `server.js` to match your local MySQL setup.
 
 - Cannot connect to MySQL
   - Verify host/port/user/password in `server.js`
-  - Ensure MySQL is running and the `dairyman` database exists
+  - Ensure MySQL is running and the `oson_farm` database exists
 - Session not persisting
   - Ensure cookies are enabled in the browser
   - Check that `express-session` is initialized before routes

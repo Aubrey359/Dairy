@@ -1,6 +1,6 @@
 -- Create the database
-CREATE DATABASE IF NOT EXISTS dairyman;
-USE dairyman;
+CREATE DATABASE IF NOT EXISTS oson_farm;
+USE oson_farm;
 
 --  Farmers Table
 CREATE TABLE Farmers (
