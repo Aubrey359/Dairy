@@ -855,6 +855,83 @@ nav a.active {
     color: var(--text-dark);
 }
 
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Features Section */
+.features-section {
+    background: var(--dark-bg);
+    padding: 4rem 0;
+}
+
+.features-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+/* Contact Info */
+.contact-info p {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-info a {
+    color: var(--primary-green);
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Form Styling */
+form {
+    max-width: 100%;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-green);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--primary-green);
+    background: var(--dark-bg);
+    color: var(--text-light);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--secondary-green);
+    box-shadow: 0 0 10px var(--shadow-medium);
+}
+
+.form-group input.error {
+    border-color: #ff6b6b;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .hero-title {
@@ -875,6 +952,14 @@ nav a.active {
     }
     
     .landing-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .grid-2 {
         grid-template-columns: 1fr;
     }
 }
