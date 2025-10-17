@@ -229,3 +229,24 @@ app.get("/logout", (req, res) => {
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
 });
+// Example for login (adapt for register)
+const bcrypt = require('bcrypt');
+const mysql = require('mysql2'); // Or your mysql driver  
+
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+  const sql = 'SELECT * FROM farmers WHERE email = ?';
+  connection.query(sql, [email], async (err, results) => {
+    if (err) return res.status(500).send('Server error');
+    if (results.length === 0) return res.redirect('/login?message=Invalid credentials');
+
+    const farmer = results[0];
+    const match = await bcrypt.compare(password, farmer.password);
+    if (match) {
+      req.session.farmerId = farmer.id;
+      res.redirect('/dashboard');
+    } else {
+      res.redirect('/login?message=Invalid credentials');
+    }
+  });
+});
